@@ -109,12 +109,7 @@ async function initGitHub() {
     if (followerCountEl) followerCountEl.textContent = user.followers ?? '–';
     if (ghLocationEl && user.location) ghLocationEl.textContent = user.location;
 
-    // Update hero avatar with GitHub avatar
-    const heroAvatar = document.getElementById('heroAvatar');
-    if (heroAvatar && user.avatar_url) {
-      heroAvatar.src = user.avatar_url;
-      heroAvatar.alt = user.name || username;
-    }
+    // Hero avatar uses the local profile photo — do not override
   }
 
   // Fetch repos
