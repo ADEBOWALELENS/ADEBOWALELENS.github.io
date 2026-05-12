@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <radialGradient id="g1" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F2C811" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#0d1117"/>
+  <rect width="1600" height="900" fill="url(#g1)"/>
+  <!-- Decorative bars left -->
+  <rect x="60" y="620" width="64" height="180" rx="5" fill="#F2C811" opacity="0.12"/>
+  <rect x="148" y="540" width="64" height="260" rx="5" fill="#F2C811" opacity="0.20"/>
+  <rect x="236" y="580" width="64" height="220" rx="5" fill="#F2C811" opacity="0.15"/>
+  <rect x="324" y="500" width="64" height="300" rx="5" fill="#F2C811" opacity="0.26"/>
+  <rect x="412" y="560" width="64" height="240" rx="5" fill="#F2C811" opacity="0.18"/>
+  <!-- Decorative bars right -->
+  <rect x="1124" y="590" width="64" height="210" rx="5" fill="#F2C811" opacity="0.15"/>
+  <rect x="1212" y="530" width="64" height="270" rx="5" fill="#F2C811" opacity="0.22"/>
+  <rect x="1300" y="500" width="64" height="300" rx="5" fill="#F2C811" opacity="0.28"/>
+  <rect x="1388" y="560" width="64" height="240" rx="5" fill="#F2C811" opacity="0.18"/>
+  <rect x="1476" y="620" width="64" height="180" rx="5" fill="#F2C811" opacity="0.12"/>
+  <!-- KPI boxes top -->
+  <rect x="100" y="55" width="200" height="80" rx="10" fill="rgba(242,200,17,0.04)" stroke="rgba(242,200,17,0.14)" stroke-width="1"/>
+  <rect x="330" y="55" width="200" height="80" rx="10" fill="rgba(242,200,17,0.04)" stroke="rgba(242,200,17,0.14)" stroke-width="1"/>
+  <rect x="1070" y="55" width="200" height="80" rx="10" fill="rgba(242,200,17,0.04)" stroke="rgba(242,200,17,0.14)" stroke-width="1"/>
+  <rect x="1300" y="55" width="200" height="80" rx="10" fill="rgba(242,200,17,0.04)" stroke="rgba(242,200,17,0.14)" stroke-width="1"/>
+  <!-- Line chart -->
+  <polyline points="620,300 730,258 840,310 950,232 1060,275 1160,210" fill="none" stroke="rgba(242,200,17,0.22)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="620,360 730,318 840,368 950,292 1060,335 1160,270" fill="none" stroke="rgba(242,200,17,0.10)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Center card -->
+  <rect x="520" y="385" width="560" height="200" rx="18" fill="rgba(22,27,34,0.92)" stroke="rgba(242,200,17,0.28)" stroke-width="1.5"/>
+  <!-- Tool name -->
+  <text x="800" y="462" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="58" font-weight="900" fill="#F2C811">Power BI</text>
+  <!-- Dashboard title -->
+  <text x="800" y="516" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="600" fill="rgba(230,237,243,0.88)">HR Analytics Dashboard</text>
+  <!-- Coming soon -->
+  <text x="800" y="558" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="rgba(139,148,158,0.70)">Dashboard screenshot coming soon</text>
+</svg>

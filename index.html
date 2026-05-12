@@ -59,7 +59,8 @@
         <li><a href="#skills"     class="nav-link">Skills</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#education"  class="nav-link">Education</a></li>
-        <li><a href="#projects"   class="nav-link">Projects</a></li>
+        <li><a href="#projects"    class="nav-link">Projects</a></li>
+        <li><a href="#dashboards" class="nav-link">Dashboards</a></li>
         <li><a href="#resume"     class="nav-link">CV</a></li>
         <li><a href="#contact"    class="nav-link">Contact</a></li>
       </ul>
@@ -396,6 +397,29 @@
     </div>
   </section>
 
+  <!-- ==================== DASHBOARDS ==================== -->
+  <section id="dashboards" class="section section-alt" aria-labelledby="dash-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Data Visualizations</span>
+        <h2 class="section-title" id="dash-heading">My Dashboards</h2>
+        <p class="section-subtitle">Real-world data visualizations built with Power BI, Tableau &amp; Excel</p>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="dash-filters reveal" id="dashFilters" role="group" aria-label="Filter dashboards by tool">
+        <button class="dash-filter active" data-filter="all">All</button>
+        <button class="dash-filter" data-filter="Power BI">Power BI</button>
+        <button class="dash-filter" data-filter="Tableau">Tableau</button>
+        <button class="dash-filter" data-filter="Excel">Excel</button>
+      </div>
+
+      <!-- Populated by initDashboards() in dashboards.js -->
+      <div class="dash-grid" id="dashGrid" aria-label="Dashboard gallery"></div>
+    </div>
+  </section>
+
   <!-- ==================== RESUME / CV ==================== -->
   <section id="resume" class="section section-alt" aria-labelledby="cv-heading">
     <div class="container">
@@ -578,9 +602,30 @@
   <!-- Toast notification -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- Scripts — order matters: config → github → main -->
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Dashboard viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close viewer">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous dashboard">
+      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next dashboard">
+      <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    </button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" loading="lazy">
+      <div class="lightbox-caption">
+        <span class="lightbox-title" id="lightboxTitle"></span>
+        <span class="lightbox-tool" id="lightboxTool"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts — order matters: config → github → dashboards → main -->
   <script src="js/config.js"></script>
   <script src="js/github.js"></script>
+  <script src="js/dashboards.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

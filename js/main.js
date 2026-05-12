@@ -400,6 +400,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 document.addEventListener('DOMContentLoaded', () => {
   renderExperience();
   renderEducation();
+  initDashboards();
   initReveal();
   checkPDF();
   initGitHub();

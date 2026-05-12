@@ -79,5 +79,43 @@ const CONFIG = {
       period: "02/2025 – 06/2025",
       icon: "fa-certificate"
     }
+  ],
+  dashboards: [
+    {
+      id: 1,
+      title: "Nova HR Analytics Dashboard",
+      tool: "Power BI",
+      description: "Comprehensive HR dashboard for Nova tracking $9.6M total income, 1,480 employees, department headcount (HR/R&D/Sales), gender split, attrition rates, age groups, business travel, and monthly income by role.",
+      image: "assets/dashboards/dashboard-1.svg",
+      tags: ["Power BI", "HR Analytics", "Attrition", "Workforce"],
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Bank Customer Churn Analysis",
+      tool: "Power BI",
+      description: "Deep-dive into churn patterns for 10,000 bank customers. Analyses churn by gender, age, credit score, geography (France/Germany/Spain), and complaints — with interactive demographic filters.",
+      image: "assets/dashboards/dashboard-2.svg",
+      tags: ["Power BI", "Customer Analytics", "Churn Analysis", "Banking"],
+      featured: true
+    },
+    {
+      id: 3,
+      title: "Churn Drivers — Behavioural Analysis",
+      tool: "Power BI",
+      description: "Second page of the Bank Churn dashboard examining churn by number of products, tenure, card type (Diamond/Gold/Platinum/Silver), and satisfaction score — with a business insights summary panel.",
+      image: "assets/dashboards/dashboard-3.svg",
+      tags: ["Power BI", "Behavioural Data", "Product Analysis"],
+      featured: false
+    },
+    {
+      id: 4,
+      title: "Superstore Sales Dashboard",
+      tool: "Tableau",
+      description: "Sales performance overview tracking $2.3M revenue, $286K total profit, and 5,009 orders. Breaks down profit by customer segment, discount impact by category, and top customer profitability by region.",
+      image: "assets/dashboards/dashboard-4.svg",
+      tags: ["Tableau", "Sales Analytics", "Profitability", "Regional"],
+      featured: true
+    }
   ]
 };
