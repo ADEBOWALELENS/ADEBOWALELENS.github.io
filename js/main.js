@@ -288,55 +288,41 @@ function renderEducation() {
 }
 
 /* =========================================
-   CONTACT FORM
+   CONTACT FORM — mailto: (no backend needed)
    ========================================= */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-
-  // Update action with formspree ID
-  if (CONFIG.personal.formspreeId && CONFIG.personal.formspreeId !== 'YOUR_FORM_ID') {
-    form.action = `https://formspree.io/f/${CONFIG.personal.formspreeId}`;
-  }
-
   const submitBtn = document.getElementById('submitBtn');
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!submitBtn) return;
 
-    const originalHTML = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-    submitBtn.disabled = true;
+    const name    = document.getElementById('contactName')?.value.trim()    || '';
+    const email   = document.getElementById('contactEmail')?.value.trim()   || '';
+    const subject = document.getElementById('contactSubject')?.value.trim() || 'Portfolio Enquiry';
+    const message = document.getElementById('contactMessage')?.value.trim() || '';
 
-    if (CONFIG.personal.formspreeId === 'YOUR_FORM_ID') {
-      setTimeout(() => {
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.disabled = false;
-        showToast('⚠️ Please set your Formspree ID in config.js to enable the form.', 'warning');
-      }, 1000);
+    if (!name || !email || !message) {
+      showToast('⚠️ Please fill in your name, email, and message.', 'warning');
       return;
     }
 
-    try {
-      const data = new FormData(form);
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      });
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailto = `mailto:${CONFIG.personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      if (res.ok) {
-        showToast('✅ Message sent! I\'ll get back to you soon.', 'success');
+    window.location.href = mailto;
+
+    if (submitBtn) {
+      const orig = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-check"></i> Opening your email app…';
+      submitBtn.disabled = true;
+      setTimeout(() => {
+        submitBtn.innerHTML = orig;
+        submitBtn.disabled = false;
         form.reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch {
-      showToast('❌ Something went wrong. Please try emailing directly.', 'error');
-    } finally {
-      submitBtn.innerHTML = originalHTML;
-      submitBtn.disabled = false;
+        showToast('✅ Your email app should have opened!', 'success');
+      }, 2500);
     }
   });
 })();
